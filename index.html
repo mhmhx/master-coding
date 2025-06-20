@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحميل Master Coding - تعلم البرمجة ببساطة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+                  @font-face {
+  font-family:  Tajawal ;
+  src: url( fontes/Tajawal-Regular.ttf ) format( truetype );
+  font-weight: 400;
+}
+
+@font-face {
+  font-family:  Tajawal ;
+  src: url( fontes/Tajawal-Medium.ttf ) format( truetype );
+  font-weight: 500;
+}
+
+@font-face {
+  font-family:  Tajawal ;
+  src: url( fontes/Tajawal-Bold.ttf ) format( truetype );
+  font-weight: 700;
+}
+
+        
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --dark-color: #2d3436;
+            --light-color: #f5f6fa;
+            --accent-color: #fd79a8;
+            --gradient: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            overflow-x: hidden;
+                        font-family:  'Tajawal' , sans-serif;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: var(--gradient);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.1)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+            opacity: 0.1;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            font-size: 2.5rem;
+            margin-left: 10px;
+            color: var(--accent-color);
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-right: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .hero {
+            padding: 80px 0;
+            background: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            position: relative;
+            color: white;
+            text-align: center;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            background-color: #ff6b9d;
+        }
+        
+        .cta-button.secondary {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+        
+        .cta-button.secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .features {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 5px;
+            background: var(--gradient);
+            margin: 15px auto;
+            border-radius: 5px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: var(--light-color);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .download-section {
+            padding: 80px 0;
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+        }
+        
+        .download-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .download-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .download-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        
+        .download-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .download-btn {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            color: var(--primary-color);
+            padding: 15px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .download-btn i {
+            font-size: 1.8rem;
+            margin-left: 10px;
+        }
+        
+        .download-btn .btn-text {
+            text-align: right;
+        }
+        
+        .download-btn .btn-text span {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #666;
+        }
+        
+        .screenshots {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+        
+        .screenshot-slider {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px 0;
+            scroll-snap-type: x mandatory;
+        }
+        
+        .screenshot-slider::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .screenshot-slider::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        .screenshot-slider::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 10px;
+        }
+        
+        .screenshot {
+            flex: 0 0 auto;
+            width: 250px;
+            height: 450px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            scroll-snap-align: start;
+            position: relative;
+        }
+        
+        .screenshot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .testimonials {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--light-color);
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-card::before {
+            content: """;
+            font-family: Georgia, serif;
+            font-size: 5rem;
+            color: var(--secondary-color);
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            margin-bottom: 20px;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-left: 15px;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 1.1rem;
+            color: var(--dark-color);
+        }
+        
+        .author-info p {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        .pricing {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .pricing-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pricing-card.popular {
+            border: 2px solid var(--primary-color);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: 15px;
+            left: -30px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 40px;
+            transform: rotate(-45deg);
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .price span {
+            font-size: 1rem;
+            color: #777;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .pricing-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            color: #555;
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .faq {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .faq-question {
+            background-color: var(--light-color);
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background-color: #e8e8e8;
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background-color: white;
+        }
+        
+        .faq-answer.active {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        .contact {
+            padding: 80px 0;
+            background: var(--gradient);
+            color: white;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .contact-details {
+            list-style: none;
+        }
+        
+        .contact-details li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-details i {
+            font-size: 1.2rem;
+            margin-left: 10px;
+            color: var(--accent-color);
+        }
+        
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo i {
+            font-size: 2rem;
+            margin-left: 10px;
+            color: var(--accent-color);
+        }
+        
+        .footer-logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .footer-links {
+            display: flex;
+            list-style: none;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .footer-links li {
+            margin: 0 15px 10px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .social-links li {
+            margin: 0 10px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            color: #777;
+            font-size: 0.9rem;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 20px;
+                justify-content: center;
+            }
+            
+            .nav-links {
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .download-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .download-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-code"></i>
+                    <div class="logo-text">Master Coding</div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#features">المميزات</a></li>
+                    <li><a href="#download">تحميل التطبيق</a></li>
+                    <li><a href="#screenshots">لقطات الشاشة</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>تعلم البرمجة بطريقة سهلة وممتعة</h1>
+                <p>تطبيق Master Coding يساعدك على تعلم البرمجة من الصفر حتى الاحتراف بمحتوى عربي بسيط وتجربة تعليمية تفاعلية</p>
+                <div>
+                    <a href="#download" class="cta-button">حمل التطبيق الآن</a>
+                    <a href="#features" class="cta-button secondary">استكشف المميزات</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">مميزات التطبيق</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>تعلم بأسلوب تفاعلي</h3>
+                    <p>جرب كتابة الكود مباشرة في التطبيق مع تصحيح فوري للأخطاء</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <h3>مسارات تعليمية</h3>
+                    <p>اختر بين عدة مسارات مثل تطوير الويب، تطبيقات الموبايل وغيرها</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>تحديات برمجية</h3>
+                    <p>شارك في تحديات لاختبار مهاراتك وكسب النقاط</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>دروس واضحة</h3>
+                    <p>شرح مبسط مع أمثلة عملية لكل مفهوم برمجي</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>مجتمع داعم</h3>
+                    <p>اطرح أسئلتك وتواصل مع متعلمين آخرين</p>
+                </div>
+              
+            </div>
+        </div>
+    </section>
+    
+    <section class="download-section" id="download">
+        <div class="container">
+            <div class="download-content">
+                <h2>حمل التطبيق وابدأ التعلم الآن</h2>
+                <p>متاح للتحميل على نظام أندرويد فقط</p>
+                <div class="download-buttons">
+         
+                    <a href="#" class="download-btn">
+                        <i class="fas fa-cloud-download-alt"></i>
+                        <div class="btn-text">
+                            حمل التطبيق من ميدياء فاير  
+                            
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="screenshots" id="screenshots">
+        <div class="container">
+            <h2 class="section-title">لقطات من التطبيق</h2>
+            <div class="screenshot-slider">
+                <div class="screenshot">
+                    <img src="images/img1.png" alt="لقطة شاشة 1">
+                </div>
+                <div class="screenshot">
+                    <img src="images/img2.png">
+                </div>
+                <div class="screenshot">
+                    <img src="images/img3.png">
+                </div>
+                <div class="screenshot">
+                    <img src="images/img4.png">
+                </div>
+                   <div class="screenshot">
+       <img src="images/img5.png">
+   </div>
+      <div class="screenshot">
+       <img src="images/img6.png">
+   </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">آراء المستخدمين</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "التطبيق ساعدني أفهم البرمجة بطريقة سهلة، الدروس منظمة والتمارين مفيدة جداً"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="أحمد محمد">
+                        </div>
+                        <div class="author-info">
+                            <h4>أحمد محمد</h4>
+                            <p>مستخدم التطبيق</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "أفضل تطبيق عربي لتعلم البرمجة، الواجهة سهلة والمحتوى مرتب بشكل ممتاز"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="نورا عبدالله">
+                        </div>
+                        <div class="author-info">
+                            <h4>نورا عبدالله</h4>
+                            <p>مستخدمة التطبيق</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "التحديات اليومية خلّتني أستمر في التعلم، التطبيق ساعدني أبدأ مشواري البرمجي"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="يوسف خالد">
+                        </div>
+                        <div class="author-info">
+                            <h4>يوسف خالد</h4>
+                            <p>مستخدم التطبيق</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">أسئلة شائعة</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        هل أحتاج إلى خبرة سابقة في البرمجة؟
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>لا، التطبيق مصمم ليناسب المبتدئين تماماً ويبدأ معك من الأساسيات.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        هل يمكنني استخدام التطبيق بدون اشتراك مدفوع؟
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم،التطبيق مجاني بالكامل</p>
+                    </div>
+                </div>
+               
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>تواصل معنا</h3>
+                    <p>لديك استفسار أو اقتراح؟ تواصل معنا عبر البريد الإلكتروني:</p>
+                    <ul class="contact-details">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            support@mastercoding.com
+                        </li>
+                    </ul>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="اسمك" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="بريدك الإلكتروني" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="الموضوع">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="رسالتك" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button">إرسال الرسالة</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-code"></i>
+                    <div class="footer-logo-text">Master Coding</div>
+                </div>
+                <ul class="footer-links">
+                    <li><a href="#">الصفحة الرئيسية</a></li>
+                    <li><a href="#features">المميزات</a></li>
+                    <li><a href="#download">تحميل التطبيق</a></li>
+                    <li><a href="#pricing">الباقات</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+                <div class="copyright">
+                    &copy; 2025 Master Coding. جميع الحقوق محفوظة
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.classList.toggle('active');
+                
+                const icon = question.querySelector('i');
+                if (answer.classList.contains('active')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
