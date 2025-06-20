@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تحميل Master Coding - تعلم البرمجة ببساطة</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   
     <style>
                   @font-face {
   font-family:  Tajawal ;
-  src: url( fontes/Tajawal-Regular.ttf ) format( truetype );
+  src: url( Tajawal-Regular.ttf ) format( truetype );
   font-weight: 400;
 }
 
 @font-face {
   font-family:  Tajawal ;
-  src: url( fontes/Tajawal-Medium.ttf ) format( truetype );
+  src: url( Tajawal-Medium.ttf ) format( truetype );
   font-weight: 500;
 }
 
 @font-face {
   font-family:  Tajawal ;
-  src: url( fontes/Tajawal-Bold.ttf ) format( truetype );
+  src: url(Tajawal-Bold.ttf ) format( truetype );
   font-weight: 700;
 }
 
@@ -38,14 +38,14 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Tajawal', sans-serif;
+            font-family:  Tajawal , sans-serif;
         }
         
         body {
             background-color: var(--light-color);
             color: var(--dark-color);
             overflow-x: hidden;
-                        font-family:  'Tajawal' , sans-serif;
+                        font-family:   Tajawal  , sans-serif;
         }
         
         .container {
@@ -70,7 +70,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.1)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+            background: url( data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.1)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg> );
             opacity: 0.1;
         }
         
@@ -122,7 +122,7 @@
         
         .hero {
             padding: 80px 0;
-            background: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            background: url( https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80 ) no-repeat center center/cover;
             position: relative;
             color: white;
             text-align: center;
@@ -820,22 +820,22 @@
             <h2 class="section-title">لقطات من التطبيق</h2>
             <div class="screenshot-slider">
                 <div class="screenshot">
-                    <img src="images/img1.png" alt="لقطة شاشة 1">
+                    <img src="img1.png" alt="لقطة شاشة 1">
                 </div>
                 <div class="screenshot">
-                    <img src="images/img2.png">
+                    <img src="img2.png">
                 </div>
                 <div class="screenshot">
-                    <img src="images/img3.png">
+                    <img src="img3.png">
                 </div>
                 <div class="screenshot">
-                    <img src="images/img4.png">
+                    <img src="img4.png">
                 </div>
                    <div class="screenshot">
-       <img src="images/img5.png">
+       <img src="img5.png">
    </div>
       <div class="screenshot">
-       <img src="images/img6.png">
+       <img src="img6.png">
    </div>
             </div>
         </div>
@@ -978,18 +978,18 @@
 
     <script>
         // Simple FAQ toggle functionality
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
+        document.querySelectorAll( .faq-question ).forEach(question => {
+            question.addEventListener( click , () => {
                 const answer = question.nextElementSibling;
-                answer.classList.toggle('active');
+                answer.classList.toggle( active );
                 
-                const icon = question.querySelector('i');
-                if (answer.classList.contains('active')) {
-                    icon.classList.remove('fa-chevron-down');
-                    icon.classList.add('fa-chevron-up');
+                const icon = question.querySelector( i );
+                if (answer.classList.contains( active )) {
+                    icon.classList.remove( fa-chevron-down );
+                    icon.classList.add( fa-chevron-up );
                 } else {
-                    icon.classList.remove('fa-chevron-up');
-                    icon.classList.add('fa-chevron-down');
+                    icon.classList.remove( fa-chevron-up );
+                    icon.classList.add( fa-chevron-down );
                 }
             });
         });
